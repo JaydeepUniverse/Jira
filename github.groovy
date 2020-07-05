@@ -5,7 +5,7 @@ def customFieldManager = ComponentAccessor.getCustomFieldManager()
 def repoName = customFieldManager.getCustomFieldObjectByName("Git repositories")
 def repoNameValue = issue.getCustomFieldValue(repoName)?.value
 //GitHub_Api_PAT_Token
-  def GH_API_TOKEN="2d58897cfbf7d2389f0344429f237ce25ec0a121"
+  def GH_API_TOKEN="xxxx"
   //Pass the Repo Name
   def post = new URL("https://api.github.com/user/repos?access_token=${GH_API_TOKEN}").openConnection();
   def message = "{\"name\": \"${repoNameValue}\", \"description\": \"This is your first repository\"}"
